@@ -1,6 +1,11 @@
 /**
+ * @typedef {"error"|"warn"|"off"} Severity
+ */
+
+/**
  * @typedef {Object} BaseConfig
  * @property {number} maxLen
+ * @property {Severity} severity
  */
 /**
  *
@@ -9,16 +14,12 @@
 function getPartial(config) {
   const conf = config || {};
   const maxLen = conf.maxLen || 80;
+  const severity = conf.severity || "error";
 
   return {
-    env: {
-      jest: true,
-      node: true,
-      es6: true,
-    },
     rules: {
       "max-len": [
-        "error",
+        severity,
         {
           code: maxLen,
           ignoreUrls: true,
@@ -29,62 +30,62 @@ function getPartial(config) {
         },
       ],
       "quotes": [
-        "error",
+        severity,
         "double",
         {
           avoidEscape: true,
         },
       ],
-      "key-spacing": ["error"],
-      "comma-dangle": ["error", "only-multiline"],
+      "key-spacing": severity,
+      "comma-dangle": [severity, "only-multiline"],
       "comma-spacing": [
-        "error",
+        severity,
         {
           before: false,
           after: true,
         },
       ],
       "no-multi-spaces": [
-        "error",
+        severity,
         {
           ignoreEOLComments: false,
         },
       ],
-      "array-bracket-spacing": ["error", "never"],
-      "array-bracket-newline": ["error", "consistent"],
-      "object-curly-spacing": ["error", "always"],
+      "array-bracket-spacing": [severity, "never"],
+      "array-bracket-newline": [severity, "consistent"],
+      "object-curly-spacing": [severity, "always"],
       "object-curly-newline": [
-        "error",
+        severity,
         {
           multiline: true,
           consistent: true,
         },
       ],
       "object-property-newline": [
-        "error",
+        severity,
         {
           allowAllPropertiesOnSameLine: true,
         },
       ],
-      "keyword-spacing": ["error"],
-      "no-duplicate-imports": ["error"],
+      "keyword-spacing": severity,
+      "no-duplicate-imports": severity,
       "brace-style": [
-        "error",
+        severity,
         "1tbs",
         {
           allowSingleLine: true,
         },
       ],
-      "space-before-blocks": ["error"],
-      "curly": ["error", "multi-line", "consistent"],
-      "semi": ["error", "always"],
+      "space-before-blocks": severity,
+      "curly": [severity, "multi-line", "consistent"],
+      "semi": [severity, "always"],
       "no-return-await": ["off"],
-      "no-trailing-spaces": ["error"],
-      "dot-notation": ["error"],
-      "no-bitwise": ["error"],
-      "quote-props": ["error", "consistent-as-needed"],
+      "no-trailing-spaces": severity,
+      "dot-notation": severity,
+      "no-bitwise": severity,
+      "quote-props": [severity, "consistent-as-needed"],
       "no-shadow": ["off"],
-      "no-multiple-empty-lines": ["error"],
+      "no-multiple-empty-lines": severity,
       "indent": ["off"],
     },
   };

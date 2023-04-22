@@ -7,9 +7,4 @@ module.exports = merge([
   base.getPartial(),
   importPlugin.getPartial(),
   prettier.getPartial(),
-  {
-    env: {
-      node: true,
-    },
-  },
 ]);

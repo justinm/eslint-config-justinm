@@ -4,6 +4,8 @@ const { merge } = require("../utils");
 
 /**
  * @typedef {Object & TypescriptConfig & ImportConfig} TypescriptImportConfigBase
+ * @param {boolean} config.alwaysTryTypes Defaults to "true"
+ * @param {string[]} config.tsExtensions Defaults to [".ts"]
  */
 
 /**
@@ -12,7 +14,8 @@ const { merge } = require("../utils");
  * @returns {ConfigPartial}
  */
 export function getPartial(config) {
-  const extensions = config.extensions || [".ts"];
+  const conf = config || {};
+  const extensions = conf.tsExtensions || [".ts"];
 
   return merge([
     importPlugin.getPartial(),

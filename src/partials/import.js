@@ -1,25 +1,29 @@
 /**
  * @typedef {Object} ImportConfig
+ * @property {Severity} severity
  */
 /**
  *
  * @param {ConfigPartial} [config={}]
  */
 function getPartial(config) {
+  const conf = config || {};
+  const severity = conf.severity || "error";
+
   return {
     extends: ["plugin:import/recommended"],
     rules: {
       "import/no-extraneous-dependencies": [
-        "error",
+        severity,
         {
           devDependencies: ["**/__tests__/**", "**/test/**"],
           optionalDependencies: false,
           peerDependencies: true,
         },
       ],
-      "import/no-unresolved": ["error"],
+      "import/no-unresolved": severity,
       "import/order": [
-        "warn",
+        severity,
         {
           groups: ["builtin", "external"],
           alphabetize: {
