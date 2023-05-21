@@ -1,6 +1,6 @@
 ## eslint-config-justinm
 
-An eslint config curated by Justin McCormick.
+An eslint config curated by Justin McCormick, a Systems Architect based near Indianapolis, Indiana.
 
 <div style="text-align: center;">
 
@@ -19,8 +19,6 @@ An eslint config curated by Justin McCormick.
 - [Installing](#Installing)
 - [Configuring Eslint](#configuring-eslint)
 - [Contributors](#contributors)
-- [About the Author](#about-the-author)
-- [Sponsoring](#sponsoring)
 
 <!-- tocstop -->
 
@@ -39,26 +37,19 @@ yarn add -D eslint-config-justinm
 
 ```javascript
 module.exports = {
-  config: ["@justinm/typescript"]
+  extends: [
+    "@justinm/eslint-config/pretty",
+    "@justinm/eslint-config/pretty-strict",
+    "@justinm/eslint-config/recommended",
+    "@justinm/eslint-config/strict",
+    "@justinm/eslint-config/typescript",
+  ]
 }
 ```
 
 ## Contributors
 
 [![Contributors][contributors-avatars]][contributors-url]
-
-## About the Author
-
-[Justin McCormick](https://justinmccormick.com) is a DevOps Engineer based in Indianapolis, IN specializing in AWS based microservices.
-
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-## Sponsoring
-
-[![Github Sponsors][sponsors-shield]][sponsors-url]
-[![Patreon][patreon-shield]][patreon-url]
-[<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Contributors" height="30" />][sponsors-url]
-
 
 [contributors-avatars]: https://contrib.rocks/image?repo=justinm/eslint-config-justinm
 [contributors-shield]: https://img.shields.io/github/contributors/justinm/eslint-config-justinm.svg?style=for-the-badge
@@ -71,11 +62,3 @@ module.exports = {
 [issues-url]: https://github.com/justinm/eslint-config-justinm/issues
 [license-shield]: https://img.shields.io/github/license/justinm/eslint-config-justinm.svg?style=for-the-badge
 [license-url]: https://github.com/justinm/eslint-config-justinm/blob/master/LICENSE.md
-[buymeacoffee-url]: https://www.buymeacoffee.com/justinmccormick
-[buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png
-[sponsors-url]: https://github.com/sponsors/justinm
-[sponsors-shield]: https://img.shields.io/github/sponsors/justinm?style=for-the-badge&logo=appveyor
-[patreon-url]: https://patreon.com/justinmccormick
-[patreon-shield]: https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%justinmccormick%26type%3Dpatrons&style=for-the-badge&logo=patreon&label=Patreon
-[linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
-[linkedin-url]: https://www.linkedin.com/in/justinlmccormick/
