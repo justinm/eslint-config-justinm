@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-justinm",
+  "name": "@justinm/eslint-config",
   "version": "0.0.0",
   "description": "A custom eslint config curated by Justin McCormick.",
   "main": "src/index.js",
