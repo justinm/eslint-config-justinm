@@ -8,7 +8,7 @@ const deepmerge = require("deepmerge");
  */
 /**
  *
- * @param {ConfigPartial[]} configs
+ * @param {(ConfigPartial|{})[]} configs
  * @returns {ConfigPartial}
  */
 function merge(configs) {

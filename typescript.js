@@ -1,12 +1,10 @@
-const base = require("./src/partials/base");
-const importPlugin = require("./src/partials/import");
-const prettier = require("./src/partials/prettier");
-const typescript = require("./src/partials/typescript-import");
-const { merge } = require("./src/utils");
+const index = require("./index");
+const { merge } = require("./src/lib/utils");
+const typescript = require("./src/typescript");
+const typescriptImport = require("./src/typescript-import");
 
 module.exports = merge([
-  base.getPartial(),
-  importPlugin.getPartial(),
-  prettier.getPartial(),
-  typescript.getPartial(),
+  index,
+  typescript.getPartial({ severity: "error" }),
+  typescriptImport.getPartial({ severity: "error" }),
 ]);

@@ -1,10 +1,12 @@
 /**
  * @typedef {Object} ImportConfig
- * @property {Severity} severity
+ * @property {Severity?} severity
  */
 /**
  *
- * @param {ConfigPartial} [config={}]
+ * @param {ImportConfig} [config={}]
+ * @return ConfigPartial
+ *
  */
 function getPartial(config) {
   const conf = config || {};

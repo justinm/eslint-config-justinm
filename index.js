@@ -1,10 +1,8 @@
-const base = require("./src/partials/base");
-const importPlugin = require("./src/partials/import");
-const prettier = require("./src/partials/prettier");
-const { merge } = require("./src/utils");
+const base = require("./src/base");
+const importPlugin = require("./src/import");
+const { merge } = require("./src/lib/utils");
 
 module.exports = merge([
-  base.getPartial(),
-  importPlugin.getPartial(),
-  prettier.getPartial(),
+  base.getPartial({ severity: "error" }),
+  importPlugin.getPartial({ severity: "error" }),
 ]);

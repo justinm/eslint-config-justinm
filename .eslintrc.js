@@ -1,7 +1,7 @@
-const base = require("./src/partials/base");
-const importPlugin = require("./src/partials/import");
-const prettier = require("./src/partials/prettier");
-const { merge } = require("./src/utils");
+const base = require("./src/base");
+const importPlugin = require("./src/import");
+const { merge } = require("./src/lib/utils");
+const prettier = require("./src/prettier");
 
 module.exports = merge([
   base.getPartial(),
@@ -10,6 +10,7 @@ module.exports = merge([
   {
     env: {
       node: true,
+      es6: true,
     },
   },
 ]);

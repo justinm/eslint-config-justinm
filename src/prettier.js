@@ -1,10 +1,11 @@
 /**
  * @typedef {Object} PrettierConfig
- * @property {Severity} severity
+ * @property {Severity?} severity
  */
 /**
  *
- * @param {ConfigPartial} [config={}]
+ * @param {PrettierConfig?} [config={}]
+ * @return ConfigPartial
  */
 function getPartial(config) {
   const conf = config || {};

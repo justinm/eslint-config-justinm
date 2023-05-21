@@ -1,11 +1,10 @@
-const importPlugin = require("./import");
+const { merge } = require("./lib/utils");
 const typescript = require("./typescript");
-const { merge } = require("../utils");
 
 /**
  * @typedef {Object & TypescriptConfig & ImportConfig} TypescriptImportConfigBase
  * @param {boolean} config.alwaysTryTypes Defaults to "true"
- * @param {string[]} config.tsExtensions Defaults to [".ts"]
+ * @param {string[]} config.tsExtensions Defaults to [".ts", ".tsx"]
  */
 
 /**
@@ -15,10 +14,9 @@ const { merge } = require("../utils");
  */
 export function getPartial(config) {
   const conf = config || {};
-  const extensions = conf.tsExtensions || [".ts"];
+  const extensions = conf.tsExtensions || [".ts", ".tsx"];
 
   return merge([
-    importPlugin.getPartial(),
     typescript.getPartial(config),
     {
       settings: {

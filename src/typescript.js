@@ -27,22 +27,6 @@ export function getPartial(config) {
       "@typescript-eslint/no-shadow": severity,
       "@typescript-eslint/no-floating-promises": severity,
       "@typescript-eslint/return-await": severity,
-      "@typescript-eslint/member-ordering": [
-        severity,
-        {
-          default: [
-            "public-static-field",
-            "public-static-method",
-            "protected-static-field",
-            "protected-static-method",
-            "private-static-field",
-            "private-static-method",
-            "field",
-            "constructor",
-            "method",
-          ],
-        },
-      ],
     },
   };
 }
