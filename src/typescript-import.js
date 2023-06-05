@@ -12,7 +12,7 @@ const typescript = require("./typescript");
  * @param {TypescriptImportConfigBase} [config={}] config
  * @returns {ConfigPartial}
  */
-export function getPartial(config) {
+function getPartial(config) {
   const conf = config || {};
   const extensions = conf.tsExtensions || [".ts", ".tsx"];
 

@@ -8,7 +8,7 @@
  * @param {TypescriptConfig} config
  * @returns {ConfigPartial}
  */
-export function getPartial(config) {
+function getPartial(config) {
   const conf = config || {};
   const severity = conf.severity || "error";
 

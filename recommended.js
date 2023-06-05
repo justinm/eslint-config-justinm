@@ -1,5 +1,5 @@
 const index = require("./index");
-const pretty = require("./pretty");
 const { merge } = require("./src/lib/utils");
+const styles = require("./src/styles");
 
-module.exports = merge([index, pretty]);
+module.exports = merge([index, styles.getPartial({ severity: "warn" })]);

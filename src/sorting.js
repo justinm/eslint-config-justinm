@@ -19,6 +19,7 @@ function getPartial(config) {
       "sort-class-members/sort-class-members": [
         severity,
         {
+          accessorPairPositioning: "getThenSet",
           order: [
             "[static-properties]",
             "[static-methods]",
@@ -28,7 +29,6 @@ function getPartial(config) {
             "[methods]",
             "[conventional-private-methods]",
           ],
-          accessorPairPositioning: "getThenSet",
         },
       ],
       "sort-imports": [

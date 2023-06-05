@@ -17,8 +17,8 @@ function getPartial(config) {
 
   return {
     rules: {
-      "array-bracket-spacing": [severity, "never"],
       "array-bracket-newline": [severity, "consistent"],
+      "array-bracket-spacing": [severity, "never"],
       "brace-style": [
         severity,
         "1tbs",
@@ -30,8 +30,8 @@ function getPartial(config) {
       "comma-spacing": [
         severity,
         {
-          before: false,
           after: true,
+          before: false,
         },
       ],
       "curly": [severity, "multi-line", "consistent"],
@@ -43,35 +43,36 @@ function getPartial(config) {
         severity,
         {
           code: maxLen,
-          ignoreUrls: true,
-          ignoreStrings: true,
-          ignoreTemplateLiterals: true,
           ignoreComments: true,
           ignoreRegExpLiterals: true,
+          ignoreStrings: true,
+          ignoreTemplateLiterals: true,
+          ignoreUrls: true,
         },
       ],
-      "no-multiple-empty-lines": severity,
       "no-multi-spaces": [
         severity,
         {
           ignoreEOLComments: false,
         },
       ],
+      "no-multiple-empty-lines": severity,
       "no-trailing-spaces": severity,
-      "object-curly-spacing": [severity, "always"],
       "object-curly-newline": [
         severity,
         {
-          multiline: true,
           consistent: true,
+          multiline: true,
         },
       ],
+      "object-curly-spacing": [severity, "always"],
       "object-property-newline": [
         severity,
         {
           allowAllPropertiesOnSameLine: true,
         },
       ],
+      "quote-props": [severity, "consistent-as-needed"],
       "quotes": [
         severity,
         "double",
@@ -79,7 +80,6 @@ function getPartial(config) {
           avoidEscape: true,
         },
       ],
-      "quote-props": [severity, "consistent-as-needed"],
       "semi": [severity, "always"],
       "space-before-blocks": severity,
     },

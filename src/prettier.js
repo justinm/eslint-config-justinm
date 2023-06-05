@@ -12,8 +12,7 @@ function getPartial(config) {
   const severity = conf.severity || "error";
 
   return {
-    plugins: ["prettier"],
-    extends: ["plugin:prettier/recommended"],
+    extends: ["plugin:prettier/recommended", "prettier"],
     rules: {
       "prettier/prettier": [
         severity,
