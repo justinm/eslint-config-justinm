@@ -18,7 +18,6 @@ An eslint config curated by Justin McCormick, a Systems Architect based near Ind
 
 - [Installing](#Installing)
 - [Configuring Eslint](#configuring-eslint)
-- [Contributors](#contributors)
 
 <!-- tocstop -->
 
@@ -38,20 +37,22 @@ yarn add -D eslint-config-justinm
 ```javascript
 module.exports = {
   extends: [
-    "@justinm/eslint-config/pretty",
-    "@justinm/eslint-config/pretty-strict",
+    // @justinm provides a very minimal config
+    "@justinm",
+    // or choose the recommended config
     "@justinm/eslint-config/recommended",
-    "@justinm/eslint-config/strict",
+    
+    // Next, choose one of the following based on your project's language
+    "@justinm/eslint-config/node",
     "@justinm/eslint-config/typescript",
+
+    // Add additional styling support
+    "@justinm/eslint-config/prettier",
+    "@justinm/eslint-config/sorted",
   ]
 }
 ```
 
-## Contributors
-
-[![Contributors][contributors-avatars]][contributors-url]
-
-[contributors-avatars]: https://contrib.rocks/image?repo=justinm/eslint-config-justinm
 [contributors-shield]: https://img.shields.io/github/contributors/justinm/eslint-config-justinm.svg?style=for-the-badge
 [contributors-url]: https://github.com/justinm/eslint-config-justinm/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/justinm/eslint-config-justinm.svg?style=for-the-badge
