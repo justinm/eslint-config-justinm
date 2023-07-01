@@ -1,0 +1,24 @@
+on:
+  pull_request: {}
+  workflow_dispatch: {}
+concurrency: 1
+jobs:
+  build:
+    name: Pull Request Workflow
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: yarn
+          node-version: 16.x
+          registry-url: https://registry.npmjs.org/
+          scope: justinm
+      - run: yarn
+      - run: yarn lint --fix
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore(lint): automatic linting"
+          commit_options: "--no-verify --signoff"
