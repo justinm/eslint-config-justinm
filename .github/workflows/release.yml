@@ -24,7 +24,7 @@ jobs:
       - run: yarn config set --home npmAuthToken ${{ secrets.NPM_TOKEN }}
       - run: yarn
       - name: Release
-        run: npm publish
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         id: Release
