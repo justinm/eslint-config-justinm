@@ -37,18 +37,19 @@ yarn add -D eslint-config-justinm
 ```javascript
 module.exports = {
   extends: [
-    // @justinm provides a very minimal config
-    "@justinm",
-    // or choose the recommended config
+    "@justinm/eslint-config/prettier",
     "@justinm/eslint-config/recommended",
+    "@justinm/eslint-config/rules",
     
-    // Next, choose one of the following based on your project's language
-    "@justinm/eslint-config/node",
+    // For React projects
+    "@justinm/eslint-config/react",
+
+    // For typescript projects
     "@justinm/eslint-config/typescript",
 
     // Add additional styling support
     "@justinm/eslint-config/prettier",
-    "@justinm/eslint-config/sorted",
+    "@justinm/eslint-config/sort",
   ]
 }
 ```

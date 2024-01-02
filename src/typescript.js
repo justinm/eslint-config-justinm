@@ -1,28 +1,23 @@
 /**
- * @typedef TypescriptConfig
- * @param {number} config.ecmaVersion
- * @param {string} config.sourceType Defaults to "module"
+ * @typedef {Object} TypescriptConfig
+ * @property {Severity?} severity
  */
 /**
  *
- * @param {TypescriptConfig} config
- * @returns {ConfigPartial}
+ * @param {TypescriptConfig?} config
+ * @return ConfigPartial
  */
 function getPartial(config) {
-  const conf = config || {};
-  const severity = conf.severity || "error";
+  const severity = config?.severity || "error";
 
   return {
-    extends: ["plugin:@typescript-eslint/recommended"],
-    parser: "@typescript-eslint/parser",
-    parserOptions: {
-      ecmaVersion: conf.ecmaVersion || 2020,
-      sourceType: conf.sourceType || "module",
-    },
     plugins: ["@typescript-eslint"],
-    ignorePatterns: ["node_modules"],
+    extends: [
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    ],
     rules: {
-      "@typescript-eslint/member-delimiter-style": severity,
       "@typescript-eslint/no-require-imports": severity,
       "@typescript-eslint/no-shadow": severity,
       "@typescript-eslint/no-floating-promises": severity,

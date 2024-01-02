@@ -1,26 +1,33 @@
+const { maxLength } = require("./lib/consts");
+
 /**
- * @typedef {Object} PrettierConfig
+ * @typedef {Object} ImportConfig
  * @property {Severity?} severity
  */
 /**
  *
- * @param {PrettierConfig?} [config={}]
+ * @param {ImportConfig} [config={}]
  * @return ConfigPartial
+ *
  */
 function getPartial(config) {
-  const conf = config || {};
-  const severity = conf.severity || "error";
-
   return {
     extends: ["plugin:prettier/recommended", "prettier"],
     rules: {
       "prettier/prettier": [
-        severity,
+        "warn",
         {
+          arrowParens: "always",
+          bracketSpacing: true,
+          parser: "typescript",
+          printWidth: maxLength,
+          semi: true,
           singleQuote: false,
+          trailingComma: "es5",
           quoteProps: "consistent",
         },
       ],
+      "max-len": "off",
     },
   };
 }
