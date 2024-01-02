@@ -11,7 +11,7 @@
  */
 function getPartial(config) {
   config = config || {};
-  const severity = config.severity || "error";
+  const severity = config.severity || "warn";
 
   return {
     plugins: ["sort-class-members"],
@@ -32,19 +32,10 @@ function getPartial(config) {
         },
       ],
       "sort-imports": [
-        "error",
+        severity,
         {
           ignoreCase: true,
-        },
-      ],
-      "sort-keys": [
-        "error",
-        "asc",
-        {
-          allowLineSeparatedGroups: true,
-          caseSensitive: false,
-          minKeys: 2,
-          natural: true,
+          allowSeparatedGroups: true,
         },
       ],
     },
